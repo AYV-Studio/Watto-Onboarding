@@ -8,7 +8,7 @@ export class UserEntity{
 id:number;
 
 @PrimaryColumn()
-@IsEmail()
+//@IsEmail()
 email:string;
 
 @Column()

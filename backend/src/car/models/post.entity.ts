@@ -1,7 +1,7 @@
 import { Column,CreateDateColumn,Entity,PrimaryGeneratedColumn } from 'typeorm';
 
-@Entity('feed_post')
-export class FeedPostEntity{
+@Entity('car_post')
+export class CarPostEntity{
 @PrimaryGeneratedColumn()
 id:number;
 

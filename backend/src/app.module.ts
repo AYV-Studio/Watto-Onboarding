@@ -3,7 +3,7 @@ import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { FeedModule } from './feed/feed.module';
+import { CarModule } from './car/car.module';
 import { AuthModule } from './auth/auth.module';
 import { UsersModule } from './users/users.module';
 //import "reflect-metadata"
@@ -20,7 +20,7 @@ import { UsersModule } from './users/users.module';
       autoLoadEntities:true,
       synchronize:true,
     }),
-    FeedModule,
+    CarModule,
     AuthModule,
     UsersModule
   ],
