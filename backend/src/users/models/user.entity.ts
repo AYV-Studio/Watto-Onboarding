@@ -1,6 +1,6 @@
-import { Column,PrimaryColumn,CreateDateColumn,Entity,PrimaryGeneratedColumn } from 'typeorm';
+import { Column,PrimaryColumn,CreateDateColumn,Entity,PrimaryGeneratedColumn, BeforeInsert } from 'typeorm';
 import { IsEmail } from 'class-validator';
-
+import * as bcrypt from 'bcrypt';
 
 @Entity('user')
 export class UserEntity{
@@ -15,10 +15,13 @@ email:string;
 password:string;
 
 @Column()
-userName:string;
+username:string;
 
 
 @Column( {default:false})
 isAdmin:boolean;
+@BeforeInsert()  async hashPassword() {
+    this.password = await bcrypt.hash(this.password, 10);  
+}
 
 }

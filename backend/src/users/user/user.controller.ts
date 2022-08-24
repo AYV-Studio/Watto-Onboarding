@@ -5,17 +5,17 @@ import { UserEntity } from '../models/user.entity';
 import {UserRO } from '../models/user.interface';
 import { UsersService } from '../users.service';
 import {User} from './user.decorator'
-import { CreateUserDto, UpdateUserDto, LoginUserDto } from '../dto';
+import { CreateUserDto, UpdateUserDto, LoginUserDto, UserDto } from '../dto';
 import { AuthGuard } from '@nestjs/passport/dist/auth.guard';
 @Controller('user')
 export class UserController {
     constructor(private usersService:UsersService){}
 
-    @UseGuards(AuthGuard()) 
+    /*@UseGuards(AuthGuard()) 
     @Get('user')
-    async findMe(@User('email') email: string): Promise<UserRO> {
-        return await this.usersService.findByEmail(email);
-      }
+    async findMe(@User('email') email: string): Promise<UserDto> {
+        return await this.usersService.findBy(user);
+      }*/
    
    
 

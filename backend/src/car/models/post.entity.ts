@@ -6,7 +6,13 @@ export class CarPostEntity{
 id:number;
 
 @Column( {default: ''})
-body:string;
+carName:string;
+
+@Column( {default: ''})
+description:string;
+
+@Column( {default: ''})
+img:string;
 
 @CreateDateColumn()
 createdAt:Date;
